@@ -1,0 +1,43 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Network access for WebView -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/Theme.AppCompat.Light">
+
+        <!-- LAUNCHER + PopupBridge return target -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+
+            <!-- Required so Android Studio can launch the app -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Popup Bridge return URL (must match the scheme you pass to PopupBridgeClient) -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Use ONE scheme consistently app-wide -->
+                <data android:scheme="com.braintreepayments.popupbridgeexample" />
+            </intent-filter>
+        </activity>
+
+        <!-- If you're no longer using PopupActivity, you can delete it.
+             Keeping it here but NOT handling any intent filters. -->
+        <activity
+            android:name=".PopupActivity"
+            android:exported="false"
+            android:launchMode="singleTask" />
+    </application>
+</manifest>

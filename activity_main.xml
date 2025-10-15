@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+
+    <Button
+        android:id="@+id/button_popup_bridge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="Launch PopupBridge"
+        android:onClick="onPopupBridgeClick"
+        android:text="Launch PopupBridge" />
+
+    <Button
+        android:id="@+id/button_popup_bridge_paypal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="Launch PayPal SDK"
+        android:onClick="onPayPalPopupBridgeClick"
+        android:text="Launch PayPal SDK" />
+
+    <Button
+        android:id="@+id/button_popup_bridge_venmo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="Launch Venmo"
+        android:onClick="onVenmoPopupBridgeClick"
+        android:text="Launch Venmo" />
+
+    <Button
+        android:id="@+id/button_popup_bridge_paypal_checkoutjs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="Launch PayPal (checkout.js)"
+        android:onClick="onPayPalCheckoutJSPopupBridgeClick"
+        android:text="Launch PayPal (checkout.js)" />
+
+    <Button
+        android:id="@+id/button_popup_bridge_lpm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="Launch Local Payment Methods"
+        android:onClick="onLPMPopupBridgeClick"
+        android:text="Launch Local Payment Methods" />
+
+
+    <FrameLayout
+        android:id="@+id/webview_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+</LinearLayout>
